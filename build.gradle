@@ -1,6 +1,6 @@
 buildscript {
-    ext.kotlin_version = '1.0.0-beta-4584' // Required for Kotlin integration
-    ext.spring_boot_version = '1.3.0.RELEASE'
+    ext.kotlin_version = '1.0.5-2' // Required for Kotlin integration
+    ext.spring_boot_version = '1.4.2.RELEASE'
     repositories {
         jcenter()
     }
@@ -14,7 +14,7 @@ buildscript {
 apply plugin: 'eclipse'
 apply plugin: 'idea'
 apply plugin: 'kotlin' // Required for Kotlin integration
-apply plugin: 'spring-boot'
+apply plugin: 'org.springframework.boot'
 apply plugin: 'application'
 //apply plugin: "kotlin2js"
 
@@ -47,10 +47,20 @@ sourceSets {
     main.kotlin.srcDirs += 'src/main/kotlin'
     main.java.srcDirs += 'src/main/java'
     main.resources.srcDirs += 'src/resources'
+    test.kotlin.srcDirs += 'src/test/kotlin'
 }
-//
-//test {
-//    testLogging {
-//        events "passed", "skipped", "failed", "standardOut", "standardError"
-//    }
+
+test {
+    testLogging {
+        events "passed", "skipped", "failed", "standardOut", "standardError"
+    }
+}
+
+//springBoot {
+//    mainClass = "web.demo.Application"
 //}
+
+run {
+    main = 'web.demo.Application'
+}
+

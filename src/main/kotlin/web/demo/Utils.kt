@@ -1,8 +1,8 @@
-package kotlin.demo
+package web.demo
 
 class Utils {
 
     fun String.containsSpaces(): Boolean {
-        return this.indexOf(" ")!=-1
+        return this.indexOf(" ") != -1
     }
 }

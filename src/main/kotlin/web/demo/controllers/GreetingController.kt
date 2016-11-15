@@ -1,10 +1,10 @@
-package kotlin.demo.controllers
+package web.demo.controllers
 
 import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RequestParam
 import org.springframework.web.bind.annotation.RestController
+import web.demo.model.Greeting
 import java.util.concurrent.atomic.AtomicLong
-import kotlin.demo.model.Greeting
 
 @RestController
 class GreetingController {

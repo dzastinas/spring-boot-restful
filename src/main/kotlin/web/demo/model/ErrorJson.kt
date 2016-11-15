@@ -1,7 +1,6 @@
-package kotlin.demo.model
+package web.demo.model
 
 import java.sql.Timestamp
-import kotlin.demo.model.Factory
 
 data class ErrorJson(val status: Int,
                      val errorAttributes: Map<String, Any>,
