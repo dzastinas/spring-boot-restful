@@ -9,9 +9,10 @@ import web.demo.model.Person
 class DefautParameters {
     @RequestMapping("/Numbers")
     fun greeting(@RequestParam(value = "name", defaultValue = "Unknown") name: String,
-                 @RequestParam(value = "age", defaultValue = "20") age: Int
+                 @RequestParam(value = "age", defaultValue = "20") age: Int,
+                 @RequestParam(value = "email", defaultValue = "no-email@gmail.com") email: String
     ): Person {
-        val jake = Person(name, age, "Stephen's College", "jake.hill@example.com")
+        val jake = Person(name, age, "Stephen's College", email)
         jake.isEligibleToVote()
         return jake
     }
